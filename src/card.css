@@ -4,6 +4,7 @@
     border-radius: 2px;
     display: inline-block;
     height: 100%;
+    transition: all ease 0.2s;
     padding: 10px;
     margin: 1rem;
     position: relative;
@@ -52,4 +53,13 @@
     background: rgb(247, 237, 255);
     color: rgb(0, 0, 0);
     margin: 20px 20px 0px 20px;
+}
+
+.card-detail {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.card-detail.hide {
+    opacity: 0;
 }

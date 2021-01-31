@@ -3,11 +3,11 @@ import "../card.css";
 class Counter extends Component {
   render() {
     return (
-      <div>
+      <div style={{display:this.props.display}}>
       <div className="progress-text-title">{this.props.counterTitle}</div>
       <div className="progress">
         <div className="progress-text">
-          {parseInt(this.props.counterValue).toLocaleString()} 
+          {this.props.counterValue} 
         </div>
         <div className="progress-value" style={{
             width:this.props.progress
