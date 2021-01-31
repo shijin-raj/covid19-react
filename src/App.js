@@ -5,7 +5,6 @@ import Card from './components/Card';
 
 class App extends Component {
   render() {
-    const some_val={country:"IN"};
     return (
       <div className="App">
         <Card stateName="Kerala"/>
