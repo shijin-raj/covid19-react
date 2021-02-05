@@ -6,33 +6,39 @@ constructor(props){
     super(props);
     this.state={
         display:"none",
+        hint:"Click to view details",
+        isActive:false,
     }
 }
-grow=()=>{
-    if(this.state.display!=="block"){
-        this.setState({display:"block"});
-    
-    }    else{
-        this.setState({display:"none"});
-    }
+toggleDisplayState=()=>{
+    let new_display_state=(this.state.display==="none")?"block":"none";
+    let is_active=(new_display_state==="none")?false:true;
+    this.setState({display:new_display_state,isActive:is_active});
 }
     render(){
-        const stateData=this.props.stateData;
-       // const recovery_perc = (parseInt(stateData.recovered)/parseInt(stateData.confirmed))*100;
-        //const death_perc = (parseInt(stateData.deceased)/parseInt(stateData.confirmed))*100;
-        const test_positivity = ((parseInt(stateData.confirmed)/parseInt(stateData.tested))*100).toFixed(2);
+        const state_data=this.props.data;
+       // const recovery_perc = (parseInt(state_data.recovered)/parseInt(state_data.confirmed))*100;
+        //const death_perc = (parseInt(state_data.deceased)/parseInt(state_data.confirmed))*100;
+        const test_positivity = ((parseInt(state_data.total.confirmed)/parseInt(state_data.total.tested))*100).toFixed(2);
+        let hint;
+        if(this.state.isActive){
+            hint= '';
+        }
+        else hint=this.state.hint;
+
         return (
-            <div className='card' onClick={this.grow} style={{background:this.state.color}}>
+            <div className='card' onClick={this.toggleDisplayState} style={{background:this.state.color}}>
                 <img className='bgimage' src="/img/virus.png" alt=""/>
-                <h3>{stateData.state_name}</h3>
+                <h3>{this.props.title}</h3>
+                <p>{hint}</p>
                 <div style={{display:this.state.display}}>
 
-                <Counter counterTitle="Population" counterValue={parseInt(stateData.population).toLocaleString()} progress="100%"/>
-                <Counter counterTitle="Tested" counterValue={parseInt(stateData.tested).toLocaleString()} progress="100%"/>
-                <Counter counterTitle="Confirmed" counterValue={parseInt(stateData.confirmed).toLocaleString()} progress="100%"/>
+                {/* <Counter counterTitle="Population" counterValue={parseInt(state_data.total.population).toLocaleString()} progress="100%"/> */}
+                <Counter counterTitle="Tested" counterValue={parseInt(state_data.total.tested).toLocaleString()} progress="100%"/>
+                <Counter counterTitle="Confirmed" counterValue={parseInt(state_data.total.confirmed).toLocaleString()} progress="100%"/>
                 <Counter counterTitle="Positivity Rate" counterValue={test_positivity+"%"} progress="100%"/>
-                <Counter counterTitle="Recovered" counterValue={parseInt(stateData.recovered).toLocaleString()} progress="100%"/>
-                <Counter counterTitle="Deceased" counterValue={parseInt(stateData.deceased).toLocaleString()} progress="100%"/>
+                <Counter counterTitle="Recovered" counterValue={parseInt(state_data.total.recovered).toLocaleString()} progress="100%"/>
+                <Counter counterTitle="Deceased" counterValue={parseInt(state_data.total.deceased).toLocaleString()} progress="100%"/>
                 </div>
             </div>
         );
