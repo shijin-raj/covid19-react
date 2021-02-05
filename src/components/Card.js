@@ -28,7 +28,6 @@ toggleDisplayState=()=>{
 
         return (
             <div className='card' onClick={this.toggleDisplayState} style={{background:this.state.color}}>
-                <img className='bgimage' src="/img/virus.png" alt=""/>
                 <h3>{this.props.title}</h3>
                 <p>{hint}</p>
                 <div style={{display:this.state.display}}>
