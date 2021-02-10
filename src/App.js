@@ -115,10 +115,11 @@ class App extends Component {
         cards=this.getCardDetails();
       }
     else{
-      cards=(<h1>Data Recieving...</h1>);
+      cards=(<h6>Loading...</h6>);
     }
     return (
       <div className="App">
+        <title>COVID-19 React</title>
         <header>
           <h1>COVID 19 TRACKER - INDIA</h1>
         </header>
