@@ -2,6 +2,8 @@ import React, { Component } from "react";
 //import logo from "./logo.svg";
 import "./App.css";
 import Card from './components/Card';
+import Footer from './components/footer/Footer';
+import LoadingScreen from './components/loadingscreen/LoadingScreen';
 // import CardButton from './components/CardButton';
 class App extends Component {
   constructor(props){
@@ -74,8 +76,6 @@ class App extends Component {
       {
         this.setState({statewise_data:state_data});
       }
-        console.log(this.state.statewise_data);
-        console.log(this.state.statewise_data.BR);
       this.setState({data_received:true});
     }).catch(error=>{
       console.log(error);
@@ -102,7 +102,6 @@ class App extends Component {
       }
       cards.push(<Card key={f_data.state_code} data={f_data.data} title={f_data.state_name}/>);
       formated_data.push(f_data);
-      console.log(f_data.data);
     
     });
    return cards;
@@ -115,7 +114,7 @@ class App extends Component {
         cards=this.getCardDetails();
       }
     else{
-      cards=(<h6>Loading...</h6>);
+      cards=(<LoadingScreen />);
     }
     return (
       <div className="App">
@@ -124,9 +123,7 @@ class App extends Component {
           <h1>COVID 19 TRACKER - INDIA</h1>
         </header>
         {cards}
-        <footer>
-          <h3>COVID 19 TRACKER PROJECT - SHIJIN RAJ 2021</h3>
-        </footer>
+        <Footer></Footer>
       </div>
     );
   }
