@@ -62,7 +62,7 @@ class App extends Component {
         const api_url = "https://data.covid19india.org/v4/min/data.min.json";
         fetch(api_url, {
             method: 'GET',
-            mode: 'cors',
+            mode: 'no-cors',
         }).then(res => {
             return res.json();
         }).then(data => {
@@ -121,10 +121,10 @@ class App extends Component {
                 title > COVID - 19 React < /title> <
                 header >
                 <
-                h1 > COVID 19 TRACKER - INDIA < /h1> <
-                /header> { cards } <
-                Footer > < /Footer> <
-                /div>
+                h1 > COVID 19 TRACKER - INDIA < /h1> < /
+                header > { cards } <
+                Footer > < /Footer> < /
+                div >
             );
         }
     }
