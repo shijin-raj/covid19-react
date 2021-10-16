@@ -62,7 +62,7 @@ class App extends Component {
         const api_url = "https://data.covid19india.org/v4/min/data.min.json";
         fetch(api_url, {
             method: 'GET',
-            mode: 'no-cors',
+            mode: 'cors',
         }).then(res => {
             return res.json();
         }).then(data => {
