@@ -1,15 +1,34 @@
 .footer {
-    padding: 20px;
-    margin-top: 20px;
-    background-color: whitesmoke;
+    
+    position: fixed;
+    top: 0px;
+    right: 0px;
     text-align: center;
+    border-left: 1px solid #f1f1f1;
 }
 
 .footer-contact {
-    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+    color: blueviolet;
+    background: cornsilk;
 }
 
 .social {
-    padding: 10px;
-    color: black
+    padding-left: 15px;
+    padding-right: 15px;
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    box-shadow:  3px 0px 3px 0px #f1f1f1;
+}
+
+.social:hover{
+    background: white;
+    padding-top: 20px;
 }

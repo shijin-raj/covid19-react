@@ -4,7 +4,8 @@
     left: 0;
     text-align: left;
     top: 0;
-    width: 220px;
+    border-right: 1px solid #f1f1f1;
+    width: 280px;
     color: rgb(15, 15, 15);
     height: 100vh;
     overflow-y: auto;
@@ -18,7 +19,7 @@
 
 .state-name-item{
     box-shadow: 3px 0px 3px 0px #f1f1f1;
-    padding: 10px 20px 10px 20px;
+    padding: 15px 25px 15px 25px;
     color: rgb(15, 15, 15);
     transition: all 0.5s ease;
     display: flex;
@@ -38,4 +39,9 @@
     cursor: pointer;
     color: blueviolet;
     background-color: white;
+}
+
+.icon-container{
+     padding-left: 10px;
+     padding-right: 10px;
 }

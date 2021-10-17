@@ -1,7 +1,4 @@
 .card {
-
-    background: #004499;
-    color:white;
     border-radius: 2px;
     display: inline-block;
     transition: all 0.5s ease;
@@ -9,12 +6,15 @@
     margin: 1rem;
     position: relative;
     width: 300px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
+    /* border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px; */
+    border-radius: 20px;
+    color: blueviolet;
+    cursor: pointer;
 }
 
 .card:hover {
-    background: white;
+    /* background: cornsilk; */
     color: blueviolet;
     cursor: pointer;
     box-shadow: 1px 1px 4px 1px;
@@ -30,33 +30,25 @@
     position: absolute;
 }
 
-.progress {
-    background: rgb(211, 221, 255);
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
+.counter-container{
+    box-shadow: 1px 1px 1px 1px;
+    margin: 20px;
     display: flex;
-    margin: 0px 20px 20px 20px;
-    height: 30px;
-    color: white
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px 10px 20px;
+    background: white;
 }
 
-.progress-value {
-    box-shadow: 0 10px 40px -10px #fff;
-    background: #394571;
-    height: 30px;
-    width: 60%;
-}
+
 
 .progress-text {
-    position: absolute;
-    padding: 10px;
+    text-align: right;
+    font-weight: bolder;
 }
 
 .progress-text-title {
-    background: rgb(247, 237, 255);
-    color: rgb(0, 0, 0);
-    margin: 20px 20px 0px 20px;
+   text-align: left;
 }
 
 .card-detail {

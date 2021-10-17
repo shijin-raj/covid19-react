@@ -5,16 +5,10 @@ export default class Footer extends Component {
     render() {
         return (
             <div className="footer">
-                <h4>
-                    SHIJIN RAJ A
-                </h4>
-                <h4>
-                    shijin802@gmail.com
-                </h4>
                 <div className="footer-contact">
-                        <a target="_blank" rel="noreferrer"  href="https://github.com/ShijinRaj0"><span className="social"><FontAwesomeIcon icon={['fab','github']} size="lg" /></span></a>
-                        <a target="_blank" rel="noreferrer"  href="https://www.linkedin.com/in/shijin-raj-4791a3200"><span className="social"><FontAwesomeIcon icon={['fab','linkedin']} size="lg" /></span></a>
-                        <a target="_blank" rel="noreferrer"  href="https://facebook.com/shijinraj.arakkan"><span className="social"><FontAwesomeIcon icon={['fab','facebook']} size="lg" /></span></a>
+                        <a className="social" target="_blank" rel="noreferrer"  href="https://github.com/ShijinRaj0"><FontAwesomeIcon icon={['fab','github']} size="lg" /></a>
+                        <a  className="social" target="_blank" rel="noreferrer"  href="https://www.linkedin.com/in/shijin-raj-4791a3200"><FontAwesomeIcon icon={['fab','linkedin']} size="lg" /></a>
+                        <a  className="social" target="_blank" rel="noreferrer"  href="https://facebook.com/shijinraj.arakkan"><FontAwesomeIcon icon={['fab','facebook']} size="lg" /></a>
                 </div>
             </div>
         )

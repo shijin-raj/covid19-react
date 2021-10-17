@@ -74,6 +74,7 @@ class App extends Component {
         return res.json();
       })
       .then((data) => {
+        console.log(data);
         if (data.TT.total !== undefined) {
           this.setState({ india_data: data.TT.total });
         }
@@ -96,26 +97,38 @@ class App extends Component {
 
   getCardDetails() {
     var cards = [];
-    var state_list = Object.entries(this.state.statewise_data);
-    let formated_data = [];
-    state_list.forEach((item) => {
-      let s_meta = this.state.state_meta.find((detail) => {
-        return detail.state_code === item[0];
+    let selection= this.state.selection;
+    let data = Object.entries(this.state.statewise_data);
+    selection.forEach(item=>{
+      let stateData= data.find((element)=>{
+        return element[0]===item.state_code;
       });
-      let f_data = {
-        state_code: item[0],
-        data: item[1],
-        state_name: s_meta.state_name,
-      };
-      cards.push(
-        <Card
-          key={f_data.state_code}
-          data={f_data.data}
-          title={f_data.state_name}
-        />
-      );
-      formated_data.push(f_data);
+      if(stateData){
+        cards.push(<Card 
+        key={stateData[0]}
+        data={stateData[1]}
+        title={item.state_name}
+        />)
+      }
     });
+    // var state_list = Object.entries(this.state.statewise_data);
+    // state_list.forEach((item) => {
+    //   let s_meta = this.state.state_meta.find((detail) => {
+    //     return detail.state_code === item[0];
+    //   });
+    //   let f_data = {
+    //     state_code: item[0],
+    //     data: item[1],
+    //     state_name: s_meta.state_name,
+    //   };
+    //   cards.push(
+    //     <Card
+    //       key={f_data.state_code}
+    //       data={f_data.data}
+    //       title={f_data.state_name}
+    //     />
+    //   );
+    // });
     return cards;
   }
 

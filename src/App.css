@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 .App {
     text-align: center;
-    margin-left: 220px;
+    margin-left: 280px;
+    margin-right: 20px;
 }
 
 .App-logo {
@@ -9,20 +10,6 @@
     pointer-events: none;
 }
 
-h1{
-    font-family: 'Ubuntu', sans-serif;
-    color:#004499;
-    background-color:#ddecff ;
-}
-
-h1 span{
-   color:#004499;
-   /* border-radius: 20px; */
-   /* border-top-left-radius: 10px;
-   border-bottom-left-radius: 10px; */
-   background: #ddecff;
-
-}
 
 
 @media (prefers-reduced-motion: no-preference) {
