@@ -1,5 +1,7 @@
 .card {
-    background: cornsilk;
+
+    background: #004499;
+    color:white;
     border-radius: 2px;
     display: inline-block;
     transition: all 0.5s ease;
@@ -65,3 +67,7 @@
 .card-detail.hide {
     opacity: 0;
 }
+
+/* .card-container{
+   
+} */
